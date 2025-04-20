@@ -12,4 +12,15 @@ note: relay 1 in the gui is relay 0 on the DBUS
 
 The other script is to start it on boot
 
+First create a file named: shelly-follow-relay0.py
+1. nano /data/shelly-follow-relay0.py
+2. paste the script from this repo
+3. make it executable: chmod +x /data/shelly-follow-relay0.py
+4. Now create a boot script: nano /data/rc.local
+5. Paste the boot script from this repo
+6. make it executable: chmod +x /data/rc.local
+reboot and try
+
+ 
+
 
