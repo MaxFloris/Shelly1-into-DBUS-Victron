@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Delay to allow D-Bus and networking to fully initialize
+sleep 15
+
+# Start the Shelly relay listener in background and log output
+/usr/bin/python3 /data/shelly-follow-relay0.py >> /data/shelly-follow-relay0.log 2>&1 &
