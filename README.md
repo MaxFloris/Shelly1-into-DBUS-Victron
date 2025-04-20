@@ -21,6 +21,12 @@ First create a file named: shelly-follow-relay0.py
 6. make it executable: chmod +x /data/rc.local
 reboot and try
 
+ ![image](https://github.com/user-attachments/assets/27614d9f-a042-4952-916c-854ce1444856)
+ ![image](https://github.com/user-attachments/assets/0ec5ac77-c1f6-4be1-a354-52e3dfba0422)
+
+ It works in GUIv1 and GUIv2
+
  
+
 
 
