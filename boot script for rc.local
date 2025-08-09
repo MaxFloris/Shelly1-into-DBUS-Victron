@@ -3,5 +3,11 @@
 # Delay to allow D-Bus and networking to fully initialize
 sleep 15
 
+# Set the Shelly device IP address (replace with your device's address)
+export SHELLY_IP="192.0.2.10"
+
+# Fail fast if the IP address wasn't configured
+: "${SHELLY_IP:?SHELLY_IP environment variable not set}"
+
 # Start the Shelly relay listener in background and log output
 /usr/bin/python3 /data/shelly-follow-relay0.py >> /data/shelly-follow-relay0.log 2>&1 &

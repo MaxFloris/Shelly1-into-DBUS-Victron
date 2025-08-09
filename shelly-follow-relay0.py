@@ -4,9 +4,16 @@ import dbus.mainloop.glib
 from gi.repository import GLib
 import requests
 import time
+import os
 
-# Replace with your actual Shelly IP
-SHELLY_IP = "REPLACE WITH YOUR SHELLY IP"
+# Shelly device IP address must be provided via environment variable.
+# Failing to set it previously resulted in attempting to contact an
+# invalid host and silently doing nothing.  Fetch it once at startup
+# and raise an explicit error if it is missing so that configuration
+# issues are immediately visible.
+SHELLY_IP = os.getenv("SHELLY_IP")
+if not SHELLY_IP:
+    raise RuntimeError("SHELLY_IP environment variable not set")
 
 def toggle_shelly(state):
     try:
