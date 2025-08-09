@@ -12,14 +12,27 @@ note: relay 1 in the gui is relay 0 on the DBUS
 
 The other script is to start it on boot
 
-First create a file named: shelly-follow-relay0.py
-1. nano /data/shelly-follow-relay0.py
-2. paste the script from this repo
-3. make it executable: chmod +x /data/shelly-follow-relay0.py
-4. Now create a boot script: nano /data/rc.local
-5. Paste the boot script from this repo
-6. make it executable: chmod +x /data/rc.local
-reboot and try
+### One-line installation
+
+You can deploy the required scripts to a Venus OS device with a single command:
+
+```
+curl -fsSL https://raw.githubusercontent.com/OWNER/Shelly1-into-DBUS-Victron/main/install.sh | sh
+```
+
+This downloads both `shelly-follow-relay0.py` and the `rc.local` boot script into `/data` and makes them executable.
+
+### Manual installation
+
+If you prefer to install manually:
+
+1. Create the relay script: `nano /data/shelly-follow-relay0.py`
+2. Paste the script from this repository
+3. Make it executable: `chmod +x /data/shelly-follow-relay0.py`
+4. Create the boot script: `nano /data/rc.local`
+5. Paste the boot script from this repository
+6. Make it executable: `chmod +x /data/rc.local`
+7. Reboot and try
 
  ![image](https://github.com/user-attachments/assets/27614d9f-a042-4952-916c-854ce1444856)
  ![image](https://github.com/user-attachments/assets/0ec5ac77-c1f6-4be1-a354-52e3dfba0422)
